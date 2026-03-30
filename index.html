@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzaria Delícia</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+/* FUNDO COM IMAGEM */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1601924638867-3ec2f4f9b1e4') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* ESCURECER FUNDO */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+/* CONTEÚDO */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* BOTÃO 3D */
+.btn {
+    background: linear-gradient(145deg, #ff3c00, #ff6a00);
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 8px #c92f00;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px #c92f00;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 3px #c92f00;
+}
+
+/* ANIMAÇÃO PULSANTE */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn {
+    animation: pulse 2s infinite;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="content">
+        <h1>🍕 A Melhor Pizza da Cidade!</h1>
+        <p>Sabor incrível, entrega rápida e aquele momento perfeito 🍕❤️</p>
+        <a href="https://wa.me/5571993107035?text=Ol%C3%A1%2C%20quero%20uma%20pizza!" class="btn">Peça sua Pizza</a>
+    </div>
+</section>
+
+</body>
+</html>
