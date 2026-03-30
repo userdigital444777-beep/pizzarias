@@ -119,5 +119,47 @@ p {
     </div>
 </section>
 
+    <script>
+(function () {
+
+  // ===== FUNÇÃO PARA PEGAR PARAMETRO DA URL =====
+  function getParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  // pega ?src=
+  let src = getParam("src");
+
+  // se existir src
+  if (src) {
+
+    // encontra o botão whatsapp
+    const whatsappBtn = document.querySelector(
+      'a[href*="wa.me/5571993107035"]'
+    );
+
+    if (whatsappBtn) {
+
+      // link original
+      const baseLink =
+        "https://wa.me/5571993107035?text=Olá, quero uma pizza!";
+
+      // monta mensagem final
+      const mensagemFinal = baseLink + src;
+
+      // codifica corretamente
+      const mensagemCodificada =
+        "https://wa.me/5571993107035?text=" +
+        encodeURIComponent("Olá, quero uma pizza!" + src);
+
+      // atualiza botão
+      whatsappBtn.href = mensagemCodificada;
+    }
+  }
+
+})();
+</script>
+
 </body>
 </html>
